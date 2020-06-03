@@ -56,12 +56,13 @@ def calc_result(Df, MAT_obs, expv, Alpha, limit, h1, h2, l1, l2):
     arr_1_400 = np.array(arr_1_400).reshape(1, 400)
 
     I = cp.Variable(N_dim)
-    M = Df*I
+    M = Df@I
     constraints = [M>=0]
     #objective = cp.Minimize(arr_1_400*I)
-    objective = cp.Minimize(cp.norm(I, 1) + Alpha*cp.norm( (expv-Tf*I)))
+    objective = cp.Minimize(cp.norm(I, 1) + Alpha*cp.norm( (expv-Tf@I)))
     
     prob = cp.Problem(objective, constraints)
+    #result = prob.solve(verbose=True, parallel=True, warm_start=True)
     result = prob.solve(verbose=True)
 
     #print(I.value)
@@ -96,7 +97,7 @@ calc_result(Df, MAT_obs, exp_Input, Alpha, limit, h1, h2, l1, l2)
 
 #val = np.dot(Df, exp_Input)
 
-val2 = calc_result(Df, MAT_obs, exp_Input, Alpha, limit, h1, h2, l1, l2)
+#val2 = calc_result(Df, MAT_obs, exp_Input, Alpha, limit, h1, h2, l1, l2)
 
 #print(val);
 
