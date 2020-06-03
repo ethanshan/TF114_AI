@@ -5,15 +5,18 @@ import cvxpy as cp
 
 # -------------------- Input data from matlab .mat file ---------------------
 # Df 601x400
-Df = np.loadtxt(open("/home/ethanshan/Codes/TF114_AI/data/Df.csv", "rb"), delimiter=",")
+#Df = np.loadtxt(open("/home/ethanshan/Codes/TF114_AI/data/Df.csv", "rb"), delimiter=",")
+Df = np.loadtxt(open("/home/toybrick/Codes/TF114_AI/data/Df.csv", "rb"), delimiter=",")
 print("Df shape: " + str(Df.shape))
 
 # exp_Input 400x1
-exp_Input = np.loadtxt(open("/home/ethanshan/Codes/TF114_AI/data/exp_Input.csv", "rb"), delimiter=",")
+#exp_Input = np.loadtxt(open("/home/ethanshan/Codes/TF114_AI/data/exp_Input.csv", "rb"), delimiter=",")
+exp_Input = np.loadtxt(open("/home/toybrick/Codes/TF114_AI/data/exp_Input.csv", "rb"), delimiter=",")
 print("exp_Input shape: " + str(exp_Input.shape))
 
 # MAT_obs = 400x601
-MAT_obs = np.loadtxt(open("/home/ethanshan/Codes/TF114_AI/data/MAT_obs.csv", "rb"), delimiter=",")
+#MAT_obs = np.loadtxt(open("/home/ethanshan/Codes/TF114_AI/data/MAT_obs.csv", "rb"), delimiter=",")
+MAT_obs = np.loadtxt(open("/home/toybrick/Codes/TF114_AI/data/MAT_obs.csv", "rb"), delimiter=",")
 print("MAT_obs shape: " + str(MAT_obs.shape))
 
 # ------------------- Input data from program parameters ----------------------------
@@ -110,8 +113,8 @@ init_val = tf.random_normal((1, 5), 0.5, 1)
 np.get_printoptions()
 np.set_printoptions(precision=12)
 print(np.get_printoptions())
-val3 = np.loadtxt(open("/home/ethanshan/Codes/TF114_AI/data/Df.csv", "rb"), dtype=np.double, delimiter=",")
-print("Rows" + str(len(val3)))
-print("Shape: " + str(val3.shape))
+#val3 = np.loadtxt(open("/home/ethanshan/Codes/TF114_AI/data/Df.csv", "rb"), dtype=np.double, delimiter=",")
+#print("Rows" + str(len(val3)))
+#print("Shape: " + str(val3.shape))
 #print(val3)
 
